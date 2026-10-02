@@ -60,3 +60,5 @@ plugins/workflow/
 2. Add an entry to `.claude-plugin/marketplace.json`:
    `{ "name": "<name>", "source": "./plugins/<name>", "description": "..." }`
 3. Run `claude plugin validate .`
+4. Any later change under `plugins/<name>/` must bump `version` in its
+   `plugin.json` in the same commit; installs are cached by version.
