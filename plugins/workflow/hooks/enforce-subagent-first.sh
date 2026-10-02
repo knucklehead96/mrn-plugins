@@ -35,5 +35,5 @@ case "$TARGET" in
     exit 0 ;;
 esac
 
-printf '{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"nv-workflow: main thread is chat-only. Delegate this %s: file reads/searches → Explore; root cause analysis → analyst; code review → review; code edits → developer; builds → builder; test runs → tester; anything else → general-purpose."}}\n' "$TOOL"
+jq -n --arg t "$TOOL" '{hookSpecificOutput:{hookEventName:"PreToolUse",permissionDecision:"deny",permissionDecisionReason:("nv-workflow: main thread is chat-only. Delegate this " + $t + ": file reads/searches → explore; root cause analysis → analyst; code review → reviewer; code edits and builds → developer; test runs → tester; anything else → general-purpose.")}}'
 exit 0
