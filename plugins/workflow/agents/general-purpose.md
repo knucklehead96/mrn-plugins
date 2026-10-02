@@ -1,7 +1,7 @@
 ---
 name: general-purpose
 description: General-purpose agent for simple multi-step tasks and lookups that do not fit a specialized agent.
-model: claude-haiku-4-5-20251001
+model: claude-sonnet-5-5
 effort: low
 
 ---

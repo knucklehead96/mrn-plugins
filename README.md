@@ -35,7 +35,7 @@ The install skills back up `settings.json` before changing it. They need `jq`.
 | `analyst` | claude-opus-5-5 | xhigh | read-only |
 | `tester` | claude-sonnet-5-5 | medium | read/write |
 | `explore` | claude-haiku-4-5-20251001 | low | read-only |
-| `general-purpose` | claude-haiku-4-5-20251001 | low | all tools |
+| `general-purpose` | claude-sonnet-5-5 | low | all tools |
 
 **Hooks** (need `jq`)
 
