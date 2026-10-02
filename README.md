@@ -61,4 +61,4 @@ plugins/workflow/
    `{ "name": "<name>", "source": "./plugins/<name>", "description": "..." }`
 3. Run `claude plugin validate .`
 4. Any later change under `plugins/<name>/` must bump `version` in its
-   `plugin.json` in the same commit; installs are cached by version.
+   `plugin.json` in the same commit, per SemVer 2.0.0 (MAJOR breaking, MINOR feature, PATCH fix).
