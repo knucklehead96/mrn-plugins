@@ -1,6 +1,6 @@
 ---
 name: install-statusline
-description: Install the nv-workflow Claude Code status line (dir, model, effort, session tokens, cache hit rate, context use, API time, cost) into the user's Claude config dir and settings.json. Use only when the user runs /install-statusline.
+description: Install the workflow Claude Code status line (dir, model, effort, session tokens, cache hit rate, context use, API time, cost) into the user's Claude config dir and settings.json. Use only when the user runs /install-statusline.
 disable-model-invocation: true
 ---
 
@@ -11,7 +11,7 @@ points `statusLine` in `settings.json` at it. Needs `jq`.
 
 ## Steps
 
-The nv-workflow hook blocks `Bash` on the main thread. Run each installer
+The workflow hook blocks `Bash` on the main thread. Run each installer
 call in a `general-purpose` subagent. The subagent returns the full output
 and the exit code. The main thread talks to the user.
 

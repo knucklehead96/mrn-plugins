@@ -1,5 +1,5 @@
 #!/bin/bash
-# nv-workflow: subagent-first enforcement. The main thread is chat-only.
+# workflow: subagent-first enforcement. The main thread is chat-only.
 # Denies file, search, shell and MCP tools on the MAIN thread; allows
 # everything inside a subagent.
 # Discriminator: the hook payload carries .agent_id only inside a subagent.
@@ -20,7 +20,7 @@ esac
 # subagent-of-a-subagent. The main thread calling Agent is normal delegation.
 if [ "$TOOL" = "Agent" ]; then
   if [ -n "$AGENT_ID" ]; then
-    printf '{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"nv-workflow: no nested subagents. Do this work yourself with your own tools instead of spawning a helper."}}\n'
+    printf '{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"workflow: no nested subagents. Do this work yourself with your own tools instead of spawning a helper."}}\n'
   fi
   exit 0
 fi
@@ -35,5 +35,5 @@ case "$TARGET" in
     exit 0 ;;
 esac
 
-jq -n --arg t "$TOOL" '{hookSpecificOutput:{hookEventName:"PreToolUse",permissionDecision:"deny",permissionDecisionReason:("nv-workflow: main thread is chat-only. Delegate this " + $t + ": file reads/searches → explore; root cause analysis → analyst; code review → reviewer; code edits and builds → developer; test runs → tester; anything else → general-purpose.")}}'
+jq -n --arg t "$TOOL" '{hookSpecificOutput:{hookEventName:"PreToolUse",permissionDecision:"deny",permissionDecisionReason:("workflow: main thread is chat-only. Delegate this " + $t + ": file reads/searches → explore; root cause analysis → analyst; code review → reviewer; code edits and builds → developer; test runs → tester; anything else → general-purpose.")}}'
 exit 0

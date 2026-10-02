@@ -19,7 +19,7 @@ Other keys (including `permissions.allow`) are left untouched. Needs `jq`.
 
 ## Steps
 
-The nv-workflow hook blocks `Bash` on the main thread. Run the installer in
+The workflow hook blocks `Bash` on the main thread. Run the installer in
 a `general-purpose` subagent and have it return the full output and exit code.
 
 1. Run:
