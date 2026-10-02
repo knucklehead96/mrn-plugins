@@ -1,0 +1,6 @@
+{
+  "name": "workflow",
+  "version": "0.1.0",
+  "description": "Developer workflow helpers",
+  "author": { "name": "mrn", "email": "rnmouli4@gmail.com" }
+}

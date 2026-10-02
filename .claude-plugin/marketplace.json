@@ -1,0 +1,17 @@
+{
+  "name": "mrn-plugins",
+  "owner": {
+    "name": "Mouli",
+    "email": "rnmouli4@gmail.com"
+  },
+  "metadata": {
+    "description": "Mouli's Claude Code plugin marketplace"
+  },
+  "plugins": [
+    {
+      "name": "workflow",
+      "source": "./plugins/workflow",
+      "description": "Subagent-first developer workflow: agents, hooks, /commit and install skills"
+    }
+  ]
+}
